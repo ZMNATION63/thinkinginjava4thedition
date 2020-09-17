@@ -1,0 +1,11 @@
+package com.company.chapter14typeinformation.examples.ex08personnotunderstood;
+
+public class Rat extends Rodent {
+    public Rat(String name) {
+        super(name);
+    }
+
+    public Rat() {
+        super();
+    }
+}

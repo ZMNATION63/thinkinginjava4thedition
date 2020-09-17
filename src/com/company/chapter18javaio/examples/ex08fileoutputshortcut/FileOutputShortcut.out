@@ -1,0 +1,31 @@
+1: package examples.ex08fileoutputshortcut;
+2: 
+3: 
+4: import examples.ex04bufferedInputfile.BufferedInputFile;
+5: 
+6: import java.io.BufferedReader;
+7: import java.io.IOException;
+8: import java.io.PrintWriter;
+9: import java.io.StringReader;
+10: 
+11: public class FileOutputShortcut {
+12:     static String file = "src\\examples\\ex08fileoutputshortcut\\FileOutputShortcut.out";
+13: 
+14:     public static void main(String[] args)
+15:             throws IOException {
+16:         BufferedReader in = new BufferedReader(
+17:                 new StringReader(
+18:                         BufferedInputFile.read("src\\examples\\ex08fileoutputshortcut\\FileOutputShortcut.java")));
+19: 
+20:         // Сокращенная запись:
+21:         PrintWriter out = new PrintWriter(file);
+22:         int lineCount = 1;
+23:         String s;
+24:         while ((s = in.readLine()) != null)
+25:             out.println(lineCount++ + ": " + s);
+26:         out.close();
+27: 
+28:         // Вывод сохраненного файла:
+29:         System.out.println(BufferedInputFile.read(file));
+30:     }
+31: }
